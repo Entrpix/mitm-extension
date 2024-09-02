@@ -25,6 +25,8 @@ $ (p)npm i
 $ node index.js
 ```
 
+To access your logs visit `DOMAIN:PORT/logs?auth=TOKEN`
+
 ## Rigtools
 Requires `webRequest` premission
 ```js
