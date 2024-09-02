@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "mitm-extension",
+  "version": "1.0",
+  "permissions": [
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
