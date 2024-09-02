@@ -3,7 +3,7 @@ const SERVER_DOMAIN = 'example.com';
 const TOKEN = '';
 
 const LOG = ["*"];
-const DONT_LOG = ["*"];
+const DONT_LOG = [];
 
 function shouldLog(url) {
   if (DONT_LOG.includes("*")) {
