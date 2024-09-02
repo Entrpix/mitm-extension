@@ -30,5 +30,5 @@ To access your logs visit `DOMAIN:PORT/logs?auth=TOKEN`
 ## Rigtools
 Requires `webRequest` premission
 ```js
-chrome.webRequest.onBeforeRequest.addListener(d => fetch('http://DOMAIN:PORT/create', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authentication': 'TOKEN' }, body: JSON.stringify({ method: d.method, date: new Date().toISOString(), url: d.url, requestBody: d.requestBody && d.requestBody.raw ? String.fromCharCode.apply(null, new Uint8Array(d.requestBody.raw[0].bytes)) : null }) }).catch(e => console.error('Error:', e)), { urls: ["<all_urls>"] }, ["requestBody"]);
+chrome.webRequest.onBeforeRequest.addListener(d => d.url.includes('localhost:3000') || fetch('http://localhost:3000/create', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authentication': 'your_secret_token' }, body: JSON.stringify({ method: d.method, date: new Date().toISOString(), url: d.url, requestBody: d.requestBody && d.requestBody.raw ? String.fromCharCode.apply(null, new Uint8Array(d.requestBody.raw[0].bytes)) : null }) }).catch(e => console.error('Error:', e)), { urls: ["<all_urls>"] }, ["requestBody"]);
 ```
